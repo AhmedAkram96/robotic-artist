@@ -10,19 +10,19 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 sudo sed -i 's/required/sufficient/g' /etc/pam.d/chsh
 
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update -y && sudo apt-get upgrade -y
+sudo apt-get install build-essential libmodbus-dev libx11-dev libxext-dev libtcmalloc-minimal4 libssl-dev libffi-dev checkinstall -y
 
 print "Installing Oh My Zsh"
 sudo apt install zsh
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-
 
 print "Conda Setup"
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
 bash miniconda.sh -b -p $HOME/miniconda
 rm miniconda.sh
-export PATH=$HOME/miniconda/bin:$PATH > ~/.zshrc
+echo 'export PATH=$HOME/miniconda/bin:$PATH' >> ~/.zshrc
 source ~/.zshrc
 conda init zsh
 source ~/.zshrc
@@ -35,14 +35,14 @@ conda activate robotic-artist
 
 print "Setup Spiral"
 cd spiral
-# pip install cmake --upgrade
-conda install -c anaconda cmake
+conda install -c anaconda cmake -y
 cmake --version
 git submodule update --init --recursive
 
 print "Install required packages"
 sudo apt-get install -y pkg-config protobuf-compiler libjson-c-dev intltool libpython3-dev python3-pip
 pip install six setuptools numpy scipy tensorflow==1.14 tensorflow-hub dm-sonnet==1.35
+conda install -c anaconda protobuf -y
 
 print "SPIRAL package"
 python setup.py develop --user
