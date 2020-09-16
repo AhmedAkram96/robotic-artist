@@ -15,7 +15,7 @@ sudo apt-get update && sudo apt-get upgrade
 print "Installing Oh My Zsh"
 sudo apt install zsh
 sudo chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 
 print "Conda Setup"
