@@ -35,7 +35,8 @@ conda activate robotic-artist
 
 print "Setup Spiral"
 cd spiral
-pip install cmake --upgrade
+# pip install cmake --upgrade
+conda install -c anaconda cmake
 cmake --version
 git submodule update --init --recursive
 
