@@ -5,5 +5,5 @@
 ```shell
 git clone --recurse-submodules https://github.com/Nodogoro/robotic-artist.git
 cd robotic-artist
-sh setup.sh
+source setup.sh
 ```

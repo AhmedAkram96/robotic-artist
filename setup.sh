@@ -20,7 +20,7 @@ install_system_packages() {
 
 install_oh_my_zsh() {
   print "Installing Oh My Zsh"
-  sudo apt install zsh
+  sudo apt install zsh -y
   chsh -s $(which zsh)
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 }
@@ -31,9 +31,9 @@ install_conda() {
   bash $HOME/miniconda.sh -b -p $HOME/miniconda
   rm miniconda.sh
   echo 'export PATH=$HOME/miniconda/bin:$PATH' >> ~/.zshrc
-  . ~/.zshrc
+  exec /bin/zsh
   conda init zsh
-  . ~/.zshrc
+  exec /bin/zsh
 }
 
 
