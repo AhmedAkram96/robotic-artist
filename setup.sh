@@ -11,7 +11,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 create_proj_conda_env() {
   print "Create Conda Env"
-  conda init zsh
   conda create -y -n robotic-artist python=3.6
   conda activate robotic-artist
 }
