@@ -29,7 +29,7 @@ install_conda() {
   print "Conda Setup"
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O $HOME/miniconda.sh
   bash $HOME/miniconda.sh -b -p $HOME/miniconda
-  rm miniconda.sh
+  rm $HOME/miniconda.sh
   echo 'export PATH=$HOME/miniconda/bin:$PATH' >> ~/.zshrc
   exec /bin/zsh
   conda init zsh
@@ -45,7 +45,7 @@ create_proj_conda_env() {
 
 setup_spirat() {
   print "Setup Spiral"
-  cd spiral
+  cd $HOME/robotic-artist/spiral
   conda install -c anaconda cmake -y
   cmake --version
   git submodule update --init --recursive
