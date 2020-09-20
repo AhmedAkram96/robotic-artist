@@ -32,8 +32,6 @@ install_conda() {
   rm $HOME/miniconda.sh
   echo 'export PATH=$HOME/miniconda/bin:$PATH' >> ~/.zshrc
   exec /bin/zsh
-  conda init zsh
-  exec /bin/zsh
 }
 
 
