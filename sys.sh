@@ -12,7 +12,7 @@ install_system_packages() {
   print "Install System Essential Packages"
   sudo sed -i 's/required/sufficient/g' /etc/pam.d/chsh
   sudo apt-get update -y && sudo apt-get upgrade -y
-  sudo apt-get install build-essential libmodbus-dev libx11-dev libxext-dev libtcmalloc-minimal4 libssl-dev libffi-dev checkinstall -y
+  sudo apt-get install build-essential libgflags-dev libmodbus-dev libx11-dev libxext-dev libtcmalloc-minimal4 libssl-dev libffi-dev checkinstall -y
 
   print "Install tmux (terminal multiplexer)"
   sudo apt install tmux -y
