@@ -87,7 +87,7 @@ install_system_packages
 install_oh_my_zsh
 install_conda
 create_proj_conda_env
-# setup_spirat
-# setup_learningtopaint
+setup_spirat
+setup_learningtopaint
 
 print 'Setup completed!'
