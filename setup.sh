@@ -38,6 +38,7 @@ install_conda() {
   bash $HOME/miniconda.sh -b -p $HOME/miniconda
   rm $HOME/miniconda.sh
   conda init --all --dry-run --verbose
+  source ~/.zshrc
 }
 
 
