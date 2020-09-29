@@ -54,12 +54,11 @@ setup_spirat() {
   print "Setup Spiral"
   cd $HOME/robotic-artist/spiral
   conda install -c anaconda cmake -y
-  cmake --version
   git submodule update --init --recursive
 
   print "Install required packages"
-  sudo apt-get install -y pkg-config protobuf-compiler libjson-c-dev intltool libpython3-dev python3-pip
-  pip install six setuptools numpy scipy tensorflow==1.14 tensorflow-hub dm-sonnet==1.35
+  sudo apt-get install -y wget git pkg-config libprotobuf-dev protobuf-compiler libjson-c-dev intltool libx11-dev libxext-dev
+  pip install six setuptools numpy scipy protobuf-compiler tensorflow==1.14 tensorflow-hub dm-sonnet==1.35
   conda install -c anaconda protobuf -y
 
   print "SPIRAL package"
