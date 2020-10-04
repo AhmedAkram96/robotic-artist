@@ -4,3 +4,6 @@
 [submodule "LearningToPaint"]
 	path = LearningToPaint
 	url = https://github.com/Nodogoro/LearningToPaint
+[submodule "spiral-docker"]
+	path = spiral-docker
+	url = https://github.com/ddtm/spiral-docker.git
