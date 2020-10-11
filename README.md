@@ -7,3 +7,8 @@ git clone --recurse-submodules https://github.com/Nodogoro/robotic-artist.git
 cd robotic-artist
 source setup.sh
 ```
+
+## Activating Conda Environment
+```shell
+conda activate robotic-artist
+```
